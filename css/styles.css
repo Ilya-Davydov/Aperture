@@ -166,10 +166,11 @@ body {
 
 .main-block__image img {
 	width: 100%;
+	min-width: 500px;
 }
 
 .main-block__iso {
-	position: relative;
+	position: absolute;
 	z-index: 2;	
 }
 .iso__list {
