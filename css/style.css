@@ -143,6 +143,101 @@ h1, h2, h3, h4, h5, h6 {
   margin-right: 50px;
 }
 
+.burder-menu {
+  display: none;
+  width: 50px;
+  margin: 0px 15px 0px 0px;
+}
+.burder-menu #toggle {
+  display: none;
+}
+.burder-menu .toggle-button {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: fixed;
+  margin: 10px;
+  width: 26px;
+  height: 26px;
+  cursor: pointer;
+  z-index: 2;
+}
+.burder-menu .toggle-button .lines,
+.burder-menu .toggle-button .lines::before,
+.burder-menu .toggle-button .lines::after {
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background-color: rgb(253, 251, 251);
+  -webkit-transition-duration: 0.25s;
+       -o-transition-duration: 0.25s;
+          transition-duration: 0.25s;
+}
+.burder-menu .toggle-button .lines::before {
+  content: "";
+  top: -8px;
+}
+.burder-menu .toggle-button .lines::after {
+  content: "";
+  top: 8px;
+}
+.burder-menu #toggle:checked ~ .toggle-button .lines {
+  -webkit-transform: rotate(45deg);
+      -ms-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+.burder-menu #toggle:checked ~ .toggle-button .lines::before {
+  top: 0;
+  -webkit-transform: rotate(0);
+      -ms-transform: rotate(0);
+          transform: rotate(0);
+}
+.burder-menu #toggle:checked ~ .toggle-button .lines::after {
+  top: 0;
+  -webkit-transform: rotate(90deg);
+      -ms-transform: rotate(90deg);
+          transform: rotate(90deg);
+}
+.burder-menu #toggle:checked ~ .content {
+  visibility: visible;
+  left: 0;
+}
+.burder-menu .content {
+  display: block;
+  position: fixed;
+  visibility: hidden;
+  top: 0;
+  right: -100%;
+  width: 100%;
+  height: 300px;
+  margin: 0;
+  padding: 80px 0;
+  list-style: none;
+  background-color: #070707;
+  -webkit-box-shadow: 1px 0px 6px rgba(0, 0, 0, 0.2);
+          box-shadow: 1px 0px 6px rgba(0, 0, 0, 0.2);
+  -webkit-transition-duration: 0.25s;
+       -o-transition-duration: 0.25s;
+          transition-duration: 0.25s;
+  z-index: 1;
+}
+.burder-menu .item {
+  display: block;
+  padding: 12px 24px;
+  color: rgb(228, 227, 227);
+  font-family: "Roboto", sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  text-decoration: none;
+}
+.burder-menu .item:hover {
+  background-color: lightgray;
+}
+
 @media (max-width: 1024px) {
   .header .wrap .menu .button {
     margin-left: 10px;
@@ -152,11 +247,12 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 @media (max-width: 900px) {
-  .header .wrap .menu .button {
-    position: absolute;
-  }
   .header .wrap .menu .item {
     margin: 0px 10px;
+    display: none;
+  }
+  .burder-menu {
+    display: block;
   }
 }
 @media (max-width: 750px) {
@@ -166,7 +262,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 @media (max-width: 420px) {
   .header .wrap .menu .button {
-    margin-right: 25px;
+    display: none;
   }
   .header .wrap .logo {
     padding-left: 25px;
