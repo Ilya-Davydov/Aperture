@@ -146,7 +146,7 @@ h1, h2, h3, h4, h5, h6 {
 .burder-menu {
   display: none;
   width: 50px;
-  margin: 0px 15px 0px 0px;
+  margin: 0px 50px 0px 0px;
 }
 .burder-menu #toggle {
   display: none;
@@ -254,18 +254,13 @@ h1, h2, h3, h4, h5, h6 {
   .burder-menu {
     display: block;
   }
+  .header .wrap .menu .button {
+    display: none;
+  }
 }
 @media (max-width: 750px) {
   .header .wrap .menu .item {
     display: none;
-  }
-}
-@media (max-width: 420px) {
-  .header .wrap .menu .button {
-    display: none;
-  }
-  .header .wrap .logo {
-    padding-left: 25px;
   }
 }
 .main {
@@ -767,6 +762,7 @@ h1, h2, h3, h4, h5, h6 {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  overflow: hidden;
 }
 .clients .wrapper .contecst {
   max-width: 600px;
