@@ -9,7 +9,7 @@
 	align-items: center;
 	justify-content: center;
 	font-family: Poppins;
-	
+
 	.wrap {
 		display: flex;
 		justify-content: space-between;
@@ -20,17 +20,20 @@
 			margin-top: 5px;
 			padding-left: 50px;
 		}
+
 		.menu {
 			display: flex;
 			flex-wrap: wrap;
 			color: white;
 			justify-content: flex-end;
 			align-items: center;
-	
+
 			.item {
 				display: inline-flex;
 				margin: 0px 28px;
+				color: #ffffff;
 			}
+
 			.button {
 				width: 155px;
 				height: 42px;
@@ -38,23 +41,21 @@
 				border-radius: 14px;
 				background: #ffffff;
 				margin-right: 50px;
+				cursor: pointer;
 			}
 		}
 	}
 }
-.burder-menu {
+
+.burger-menu {
 	display: none;
-	// display: flex;
-	// border: 2px solid red;
 	width: 50px;
-	// justify-content: center;
-	// align-items: center;
 	margin: 0px 50px 0px 0px;
 
 	#toggle {
 		display: none;
 	}
-	
+
 	.toggle-button {
 		display: flex;
 		align-items: center;
@@ -65,7 +66,7 @@
 		cursor: pointer;
 		z-index: 2;
 	}
-	
+
 	.toggle-button .lines,
 	.toggle-button .lines::before,
 	.toggle-button .lines::after {
@@ -76,36 +77,36 @@
 		background-color: rgb(253, 251, 251);
 		transition-duration: .25s;
 	}
-	
+
 	.toggle-button .lines::before {
 		content: '';
 		top: -8px;
 	}
-	
+
 	.toggle-button .lines::after {
 		content: '';
 		top: 8px;
 	}
-	
+
 	#toggle:checked~.toggle-button .lines {
 		transform: rotate(45deg);
 	}
-	
+
 	#toggle:checked~.toggle-button .lines::before {
 		top: 0;
 		transform: rotate(0);
 	}
-	
+
 	#toggle:checked~.toggle-button .lines::after {
 		top: 0;
 		transform: rotate(90deg);
 	}
-	
-	#toggle:checked ~ .content {
+
+	#toggle:checked~.content {
 		visibility: visible;
 		left: 0;
 	}
-	
+
 	.content {
 		display: block;
 		position: fixed;
@@ -113,17 +114,21 @@
 		top: 0;
 		right: -100%;
 		width: 100%;
-		height: 300px;
+		height: 340px;
 		margin: 0;
-		padding: 80px 0;
 		list-style: none;
 		background-color: #070707;
 		box-shadow: 1px 0px 6px rgba(0, 0, 0, .2);
 		transition-duration: .25s;
 		z-index: 1;
 
+		.logo-burger {
+			align-items: center;
+			margin: 31px 0px;
+			padding-left: 50px;
+		}
 	}
-	
+
 	.item {
 		display: block;
 		padding: 12px 24px;
@@ -133,47 +138,56 @@
 		font-weight: 600;
 		text-decoration: none;
 	}
-	
+
 	.item:hover {
 		background-color: lightgray;
+		color: #000;
+	}
+
+	.button-burger {
+		width: 155px;
+		height: 42px;
+		font-size: 16px;
+		border-radius: 14px;
+		background: #ffffff;
+		margin: 10px 0px 0px 50px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		font-family: Poppins;
+		cursor: pointer;
 	}
 }
-
-
 
 
 @media (max-width: 1024px) {
 	.header .wrap .menu .button {
 		margin-left: 10px;
 	}
+
 	.header .wrap .menu .item {
 		margin: 0px 10px;
 	}
 }
+
 @media (max-width: 900px) {
 	.header .wrap .menu .item {
 		margin: 0px 10px;
 		display: none;
 	}
-	.burder-menu {
+
+	.burger-menu {
 		display: block;
 	}
+
 	.header .wrap .menu .button {
 		display: none;
 	}
 }
+
 @media (max-width: 750px) {
 
-	.header .wrap .menu .item {
+	.heager .wrap .menu .item {
 		display: none;
 	}
-}
-@media (max-width: 420px) {
-	// .header .wrap .menu .button {
-	// 	// margin-right: 25px;
-	// 	display: none;
-	// }
-	// .header .wrap .logo {
-	// 	padding-left: 25px;
-	// }
 }
